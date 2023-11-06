@@ -2,9 +2,16 @@
 {
 	internal class Program
 	{
-		static void Main(string[] args)
+		static void Main()
 		{
-			Console.WriteLine("Hello, World!");
+			Fraction oneHalf = new(1,2);
+			Fraction oneThird = new(1,3);
+
+			Fraction sumNonstaticMethod = oneHalf.Add(oneThird);
+			Console.WriteLine(sumNonstaticMethod.ToText());
+
+			Fraction sumStaticMethod = Fraction.Add(oneHalf, oneThird);
+			Console.WriteLine(sumStaticMethod.ToText());
 		}
 	}
 }
